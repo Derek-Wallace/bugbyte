@@ -2,14 +2,9 @@
   <header>
     <Navbar />
   </header>
-  <main>
+  <main class="bg-texture">
     <router-view />
   </main>
-  <footer>
-    <div class="bg-dark text-light text-center p-4">
-      Made with 💖 by CodeWorks
-    </div>
-  </footer>
 </template>
 
 <script>
@@ -26,5 +21,8 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
-
+.bg-texture{
+  background-image: url(https://ak.picdn.net/shutterstock/videos/1014989767/thumb/1.jpg);
+  background-size: contain;
+}
 </style>

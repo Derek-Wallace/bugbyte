@@ -1,11 +1,11 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-d">
+    <router-link class="navbar-brand d-flex" :to="{ name: 'Bugs' }">
       <div class="d-flex flex-column align-items-center">
         <img
           alt="logo"
-          src="../assets/img/cw-logo.png"
-          height="45"
+          src="../assets/img/bugbyte.png"
+          height="100"
         />
       </div>
     </router-link>
@@ -23,13 +23,8 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link">
-            Home
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link :to="{ name: 'About' }" class="nav-link">
-            About
+          <router-link :to="{ name: 'Bugs' }" class="nav-link">
+            Bugs
           </router-link>
         </li>
       </ul>
@@ -60,11 +55,6 @@
             :class="{ show: state.dropOpen }"
             @click="state.dropOpen = false"
           >
-            <router-link :to="{ name: 'Account' }">
-              <div class="list-group-item list-group-item-action hoverable">
-                Account
-              </div>
-            </router-link>
             <div
               class="list-group-item list-group-item-action hoverable"
               @click="logout"
@@ -123,5 +113,8 @@ a:hover {
 }
 .nav-item .nav-link.router-link-exact-active{
   color: var(--primary);
+}
+.bg-d{
+  background-color: #102831;
 }
 </style>

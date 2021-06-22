@@ -14,6 +14,7 @@ class BugsService {
   async close(id, body) {
     body.closed = true
     const bug = await dbContext.Bugs.findByIdAndUpdate(id, body, { new: true, runValidators: true })
+    await bug.populate('creator', 'name picture').execPopulate()
     return bug
   }
 
@@ -34,6 +35,7 @@ class BugsService {
     }
     delete body.closed
     const bug = await dbContext.Bugs.findByIdAndUpdate(id, body, { new: true, runValidators: true })
+    await bug.populate('creator', 'name picture').execPopulate()
     return bug
   }
 
@@ -51,7 +53,7 @@ class BugsService {
 
   async getNotes(id) {
     const bug = await dbContext.Bugs.findById(id)
-    const notes = await dbContext.Notes.find({ bug: bug })
+    const notes = await dbContext.Notes.find({ bug: bug }).populate('creator', 'name picture')
     return notes
   }
 
